@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/basik" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp" android:gravity="center_horizontal">
+            <TextView style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Своя игра" android:textSize="40sp" />
+            <FrameLayout android:layout_width="280dp" android:layout_height="280dp">
+                <ImageView android:id="@+id/monsterImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitCenter" android:src="@drawable/normalmonsor" />
+                <ImageView android:id="@+id/visionOverlay" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitCenter" android:src="@drawable/see" />
+                <ImageView android:id="@+id/noVisionX" android:layout_width="90dp" android:layout_height="90dp" android:layout_gravity="center" android:src="@drawable/x" android:visibility="gone" />
+                <ImageView android:id="@+id/gunOverlay" android:layout_width="100dp" android:layout_height="100dp" android:layout_gravity="end|center_vertical" android:src="@drawable/gun" />
+                <ImageView android:id="@+id/gunX" android:layout_width="70dp" android:layout_height="70dp" android:layout_gravity="end|center_vertical" android:src="@drawable/x" android:visibility="gone" />
+                <ImageView android:id="@+id/clownOverlay" android:layout_width="70dp" android:layout_height="70dp" android:layout_gravity="center" android:src="@drawable/clown" />
+                <ImageView android:id="@+id/clownX" android:layout_width="60dp" android:layout_height="60dp" android:layout_gravity="center" android:src="@drawable/x" android:visibility="gone" />
+                <ImageView android:id="@+id/sleepOverlay" android:layout_width="90dp" android:layout_height="90dp" android:layout_gravity="start|top" android:src="@drawable/sleap" />
+                <ImageView android:id="@+id/sleepX" android:layout_width="60dp" android:layout_height="60dp" android:layout_gravity="start|top" android:src="@drawable/x" android:visibility="gone" />
+            </FrameLayout>
+            <CheckBox android:id="@+id/visionCheck" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Зрение монстра" android:textSize="24sp" android:checked="true" />
+            <CheckBox android:id="@+id/gunCheck" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Стрельба" android:textSize="24sp" android:checked="true" />
+            <CheckBox android:id="@+id/clownCheck" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Клоунада" android:textSize="24sp" android:checked="true" />
+            <CheckBox android:id="@+id/sleepCheck" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Сонливость" android:textSize="24sp" android:checked="true" />
+            <TextView android:id="@+id/timeText" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="28sp" />
+            <SeekBar android:id="@+id/timeSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="500" />
+            <Button android:id="@+id/startButton" style="@style/JaydenButton" android:layout_width="220dp" android:layout_height="72dp" android:text="Старт" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

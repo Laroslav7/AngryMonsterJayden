@@ -1,0 +1,7 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/fon" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="20dp">
+        <Button android:id="@+id/backButton" style="@style/JaydenButton" android:layout_width="160dp" android:layout_height="60dp" android:text="← Назад" />
+        <GridLayout android:id="@+id/levelGrid" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:columnCount="2" android:useDefaultMargins="true" />
+    </LinearLayout>
+</FrameLayout>
