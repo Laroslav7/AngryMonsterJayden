@@ -1,4 +1,4 @@
-package com.laroslav.angrymonsterjayden
+package om.laroslav.angrymonsterjayden
 
 import org.junit.Test
 

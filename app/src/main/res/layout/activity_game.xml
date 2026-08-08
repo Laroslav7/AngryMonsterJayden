@@ -1,0 +1,9 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:id="@+id/backgroundImage" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/basik" />
+    <ImageView android:id="@+id/monsterImage" android:layout_width="match_parent" android:layout_height="360dp" android:layout_gravity="center" android:adjustViewBounds="true" android:scaleType="fitCenter" />
+    <TextView android:id="@+id/messageText" style="@style/JaydenText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="top|center_horizontal" android:layout_marginTop="48dp" android:gravity="center" android:text="Прячься!" android:textSize="48sp" />
+    <TextView android:id="@+id/timerText" style="@style/JaydenText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center" android:textSize="72sp" />
+    <ImageView android:id="@+id/winBanner" android:layout_width="300dp" android:layout_height="160dp" android:layout_gravity="center" android:src="@drawable/youwin" android:visibility="gone" />
+    <Button android:id="@+id/loseButton" style="@style/JaydenButton" android:layout_width="220dp" android:layout_height="72dp" android:layout_gravity="bottom|center_horizontal" android:layout_marginBottom="32dp" android:text="Проиграли" android:visibility="gone" />
+    <Button android:id="@+id/menuButton" style="@style/JaydenButton" android:layout_width="240dp" android:layout_height="72dp" android:layout_gravity="bottom|center_horizontal" android:layout_marginBottom="32dp" android:text="Далее" android:visibility="gone" />
+</FrameLayout>
