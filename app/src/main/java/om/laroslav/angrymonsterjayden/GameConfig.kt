@@ -7,7 +7,9 @@ data class GameConfig(
     val sleepy: Boolean,
     val ultra: Boolean,
     val seconds: Int,
-    val monsterDrawable: Int
+    val monsterDrawable: Int,
+    val lives: Int = 1,
+    val playerNames: List<String> = listOf("Игрок 1", "Игрок 2")
 )
 
 val Int.dp: Int get() = (this * android.content.res.Resources.getSystem().displayMetrics.density).toInt()
