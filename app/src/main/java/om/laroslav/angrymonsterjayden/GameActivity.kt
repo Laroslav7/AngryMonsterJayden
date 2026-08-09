@@ -23,7 +23,7 @@ class GameActivity : Activity() {
         super.onCreate(savedInstanceState); setContentView(R.layout.activity_game)
         background = findViewById(R.id.backgroundImage); monster = findViewById(R.id.monsterImage); message = findViewById(R.id.messageText); timer = findViewById(R.id.timerText)
         loseButton = findViewById(R.id.loseButton); menuButton = findViewById(R.id.menuButton); winBanner = findViewById(R.id.winBanner)
-        config = readConfig(); findViewById<View>(R.id.gameMonsterStage).visibility = View.GONE; loseButton.setOnClickListener { showLose() }; menuButton.setOnClickListener { goHome() }
+        config = readConfig(); monster.visibility = View.GONE; loseButton.setOnClickListener { showLose() }; menuButton.setOnClickListener { goHome() }
         startHidePhase()
     }
 
@@ -42,7 +42,7 @@ class GameActivity : Activity() {
     }
 
     private fun startGameplay() {
-        play(R.raw.start); message.visibility = View.GONE; findViewById<View>(R.id.gameMonsterStage).visibility = View.VISIBLE; monster.setImageResource(config.monsterDrawable); applyCustomOverlays(); loseButton.visibility = View.VISIBLE
+        play(R.raw.start); message.visibility = View.GONE; monster.visibility = View.VISIBLE; monster.setImageResource(config.monsterDrawable); loseButton.visibility = View.VISIBLE
         countDown = object : CountDownTimer(config.seconds * 1000L, 1_000) {
             override fun onTick(ms: Long) { val s = (ms / 1000).toInt(); timer.text = "%02d:%02d".format(s / 60, s % 60) }
             override fun onFinish() = showWin()
@@ -50,37 +50,18 @@ class GameActivity : Activity() {
     }
 
     private fun showLose() {
-        countDown?.cancel(); stopAudio(); background.setImageResource(R.drawable.fon); monster.setImageResource(R.drawable.lose); hideGameOverlays(); findViewById<View>(R.id.gameMonsterStage).visibility = View.VISIBLE
+        countDown?.cancel(); stopAudio(); background.setImageResource(R.drawable.fon); monster.setImageResource(R.drawable.lose); monster.visibility = View.VISIBLE
         message.visibility = View.GONE; timer.visibility = View.GONE; winBanner.visibility = View.GONE; loseButton.visibility = View.GONE; menuButton.text = "В главное меню"; menuButton.visibility = View.VISIBLE
     }
 
     private fun showWin() {
-        stopAudio(); background.setImageResource(R.drawable.win); findViewById<View>(R.id.gameMonsterStage).visibility = View.GONE; message.visibility = View.GONE; timer.visibility = View.GONE; loseButton.visibility = View.GONE; winBanner.visibility = View.VISIBLE; menuButton.text = "Далее"; menuButton.visibility = View.VISIBLE
+        stopAudio(); background.setImageResource(R.drawable.win); monster.visibility = View.GONE; message.visibility = View.GONE; timer.visibility = View.GONE; loseButton.visibility = View.GONE; winBanner.visibility = View.VISIBLE; menuButton.text = "Далее"; menuButton.visibility = View.VISIBLE
         AnimatorSet().apply {
             playSequentially(
                 ObjectAnimator.ofFloat(background, View.SCALE_X, 1f, 1.25f), ObjectAnimator.ofFloat(background, View.SCALE_Y, 1f, 1.25f),
                 ObjectAnimator.ofFloat(background, View.SCALE_X, 1.25f, 1f), ObjectAnimator.ofFloat(background, View.SCALE_Y, 1.25f, 1f)
             ); duration = 900; interpolator = AccelerateDecelerateInterpolator(); start()
         }
-    }
-
-    private fun applyCustomOverlays() {
-        val customBase = config.monsterDrawable == R.drawable.normalmonsor || config.monsterDrawable == R.drawable.notseemonstor
-        setOverlay(R.id.gameVisionOverlay, customBase && config.vision)
-        setOverlay(R.id.gameShotOverlay, customBase && config.gun)
-        setOverlay(R.id.gameSleepOverlay, customBase && config.sleepy)
-        setOverlay(R.id.gameClownOverlay, customBase && config.clown)
-    }
-
-    private fun hideGameOverlays() {
-        setOverlay(R.id.gameVisionOverlay, false)
-        setOverlay(R.id.gameShotOverlay, false)
-        setOverlay(R.id.gameSleepOverlay, false)
-        setOverlay(R.id.gameClownOverlay, false)
-    }
-
-    private fun setOverlay(id: Int, visible: Boolean) {
-        findViewById<View>(id).visibility = if (visible) View.VISIBLE else View.GONE
     }
 
     private fun play(resId: Int) { stopAudio(); player = MediaPlayer.create(this, resId).also { it.start() } }
