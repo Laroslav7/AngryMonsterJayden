@@ -1,0 +1,9 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/fon" />
+    <ImageView android:id="@+id/menuMonsterImage" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="130dp" android:adjustViewBounds="true" android:scaleType="fitCenter" android:src="@drawable/jadeon_menu" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:gravity="center" android:orientation="vertical" android:padding="20dp">
+        <TextView style="@style/JaydenText" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Слепой монстр Джейдон" android:textSize="48sp" android:gravity="center" />
+        <Button android:id="@+id/playButton" style="@style/JaydenButton" android:layout_width="260dp" android:layout_height="76dp" android:layout_marginTop="4dp" android:text="Играть" />
+        <Button android:id="@+id/customButton" style="@style/JaydenButton" android:layout_width="260dp" android:layout_height="76dp" android:layout_marginTop="8dp" android:text="Своя игра" />
+    </LinearLayout>
+</FrameLayout>

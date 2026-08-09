@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/basik" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal" android:gravity="center" android:padding="12dp">
+        <FrameLayout android:id="@+id/monsterStage" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1.25" android:padding="2dp">
+            <ImageView android:id="@+id/monsterImage" android:layout_width="match_parent" android:layout_height="match_parent" android:adjustViewBounds="true" android:scaleType="fitCenter" android:src="@drawable/normalmonsor" />
+            <ImageView android:id="@+id/visionOverlay" android:layout_width="match_parent" android:layout_height="match_parent" android:adjustViewBounds="true" android:scaleType="fitCenter" android:src="@drawable/see" />
+            <ImageView android:id="@+id/shotOverlay" android:layout_width="match_parent" android:layout_height="match_parent" android:adjustViewBounds="true" android:scaleType="fitCenter" android:src="@drawable/shot" />
+            <ImageView android:id="@+id/sleepOverlay" android:layout_width="match_parent" android:layout_height="match_parent" android:adjustViewBounds="true" android:scaleType="fitCenter" android:src="@drawable/slep" />
+            <ImageView android:id="@+id/clownOverlay" android:layout_width="match_parent" android:layout_height="match_parent" android:adjustViewBounds="true" android:scaleType="fitCenter" android:src="@drawable/clowww" />
+            <ImageView android:id="@+id/noVisionX" android:layout_width="260dp" android:layout_height="120dp" android:layout_gravity="center" android:scaleType="fitXY" android:src="@drawable/x" android:visibility="gone" />
+        </FrameLayout>
+        <ScrollView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="0.75" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Своя игра" android:textSize="38sp" />
+                <FrameLayout android:id="@+id/visionButton" android:layout_width="148dp" android:layout_height="148dp" android:layout_marginTop="8dp" android:background="@drawable/button" android:padding="8dp">
+                    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitCenter" android:src="@drawable/see" />
+                    <ImageView android:id="@+id/visionX" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitXY" android:src="@drawable/x" android:visibility="gone" />
+                </FrameLayout>
+                <TextView android:id="@+id/visionStatus" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" />
+                <FrameLayout android:id="@+id/shotButton" android:layout_width="148dp" android:layout_height="148dp" android:layout_marginTop="4dp" android:background="@drawable/button" android:padding="8dp">
+                    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitCenter" android:src="@drawable/shot" />
+                    <ImageView android:id="@+id/shotX" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitXY" android:src="@drawable/x" android:visibility="gone" />
+                </FrameLayout>
+                <TextView android:id="@+id/shotStatus" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" />
+                <FrameLayout android:id="@+id/sleepButton" android:layout_width="148dp" android:layout_height="148dp" android:layout_marginTop="4dp" android:background="@drawable/button" android:padding="8dp">
+                    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitCenter" android:src="@drawable/slep" />
+                    <ImageView android:id="@+id/sleepX" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitXY" android:src="@drawable/x" android:visibility="gone" />
+                </FrameLayout>
+                <TextView android:id="@+id/sleepStatus" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" />
+                <FrameLayout android:id="@+id/clownButton" android:layout_width="148dp" android:layout_height="148dp" android:layout_marginTop="4dp" android:background="@drawable/button" android:padding="8dp">
+                    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitCenter" android:src="@drawable/clowww" />
+                    <ImageView android:id="@+id/clownX" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitXY" android:src="@drawable/x" android:visibility="gone" />
+                </FrameLayout>
+                <TextView android:id="@+id/clownStatus" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18sp" />
+                <TextView android:id="@+id/timeText" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="26sp" />
+                <SeekBar android:id="@+id/timeSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="500" />
+                <Button android:id="@+id/startButton" style="@style/JaydenButton" android:layout_width="210dp" android:layout_height="70dp" android:text="Старт" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>
