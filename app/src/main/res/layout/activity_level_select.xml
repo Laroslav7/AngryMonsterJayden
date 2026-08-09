@@ -1,0 +1,20 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/fon" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="16dp">
+        <Button android:id="@+id/backButton" style="@style/JaydenButton" android:layout_width="170dp" android:layout_height="58dp" android:text="← Назад" />
+        <GridLayout android:id="@+id/levelGrid" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:columnCount="2" android:useDefaultMargins="true" />
+        <LinearLayout android:id="@+id/previewPanel" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="8dp" android:background="#99000000" android:gravity="center" android:orientation="horizontal" android:padding="12dp" android:visibility="gone">
+            <ImageView android:id="@+id/previewMonster" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:adjustViewBounds="true" android:scaleType="fitCenter" />
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                <TextView android:id="@+id/previewTitle" style="@style/JaydenText" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:textSize="30sp" />
+                <TextView android:id="@+id/previewInfo" style="@style/JaydenText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="22sp" />
+                <TextView android:id="@+id/levelLivesText" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" />
+                <SeekBar android:id="@+id/levelLivesSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="2" />
+                <TextView android:id="@+id/levelPlayersText" style="@style/JaydenText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" />
+                <SeekBar android:id="@+id/levelPlayersSeek" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="6" />
+                <LinearLayout android:id="@+id/levelNamesContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
+                <Button android:id="@+id/startLevelButton" style="@style/JaydenButton" android:layout_width="240dp" android:layout_height="76dp" android:layout_marginTop="8dp" android:text="Старт" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

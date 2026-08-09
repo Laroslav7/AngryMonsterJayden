@@ -1,0 +1,18 @@
+<resources>
+    <style name="JaydenText">
+        <item name="android:fontFamily">@font/handgeschrieben</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:shadowColor">#AA000000</item>
+        <item name="android:shadowDx">3</item>
+        <item name="android:shadowDy">3</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+    <style name="JaydenButton">
+        <item name="android:fontFamily">@font/handgeschrieben</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+</resources>
